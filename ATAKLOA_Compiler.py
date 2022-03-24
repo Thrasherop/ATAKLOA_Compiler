@@ -135,6 +135,10 @@ def inline_args(args):
         if line[0] == '/' and line[1] == '/':
             continue
 
+        # Skips any empy line
+        if line == "\n":
+            continue
+
         all_instructions.append(parse_line(line))
         
 
