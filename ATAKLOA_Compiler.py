@@ -131,7 +131,6 @@ def inline_args(args):
 
     for line in lines:
 
-        print(line)
 
         # Skips any line that starts with a //
         if line[0] == '/' and line[1] == '/':
