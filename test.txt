@@ -1,0 +1,10 @@
+LD 1,5
+MOV 2,1
+DISP 1,2
+// foo
+XOR 7,1,2
+AND 4,1,2
+OR 5,1,2
+ADD 6,1,2
+SUB 0,1,2
+DISP 0,6
