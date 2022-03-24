@@ -7,7 +7,7 @@ def convert_to_binary(integer):
     """
     Converts an integer to binary
     """
-    return bin(int(integer))[2:]
+    return bin(int(integer, 16))[2:]
 
 def parse_line(line):
 
@@ -131,6 +131,8 @@ def inline_args(args):
 
     for line in lines:
 
+        print(line)
+
         # Skips any line that starts with a //
         if line[0] == '/' and line[1] == '/':
             continue
@@ -138,6 +140,8 @@ def inline_args(args):
         # Skips any empy line
         if line == "\n":
             continue
+
+
 
         all_instructions.append(parse_line(line))
         
