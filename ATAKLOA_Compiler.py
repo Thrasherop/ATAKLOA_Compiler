@@ -2,25 +2,6 @@ from lib2to3.pytree import convert
 import sys 
 
 
-"""
-
-to run:
-$ python ATAKLOA_Compiler.py <assembly_file> <binary_output>
-
-
-
-
-Instructions: 
-    0000 - NOP - No Operation - Does nothing
-    0001 - LD - Load - LD [destination], [source]
-    0010 - MOV - Move - MOV [destination], [source]
-    0011 - DISP - Display - DISP [source1], [source2]
-    0100 - XOR - Exclusive OR - XOR [destination], [source1], [source2]
-    0101 - AND - AND - AND [destination], [source1], [source2]
-    0110 - OR - OR - OR [destination], [source1], [source2]
-    0111 - ADD - add - ADD [destination], [source1], [source2]
-    1111 - SUB - subtract - SUB [destination], [source1], [source2]
-"""
 
 def convert_to_binary(integer):
     """
@@ -37,6 +18,12 @@ def parse_line(line):
     # breaks the line into a list
     partial_list = line.split(" ")
     instruction = partial_list[0]
+
+    # If it is a NOP instruction, then just return 0000
+    if "NOP" in instruction:
+        print("Turned NOP into 0000")
+        return "0000"
+
     params = partial_list[1].split(",")
 
     
@@ -162,8 +149,8 @@ def inline_args(args):
 def main():
 
     # Checks for flags
-    if sys.arg[0] == "-f" or sys.arg[0] == "--help":
-        print("Usage: ATAKLOA_Compiler.py <assembly_file> <binary_output>")
+    if "-h" in sys.argv or "--help" in sys.argv:
+        print("\n\nUsage: ATAKLOA_Compiler.py <assembly_file> <binary_output>\n\nView README.md for more info \n\n")
         exit()
 
 

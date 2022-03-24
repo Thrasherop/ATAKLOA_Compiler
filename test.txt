@@ -1,3 +1,4 @@
+NOP
 LD 1,5
 MOV 2,1
 DISP 1,2
