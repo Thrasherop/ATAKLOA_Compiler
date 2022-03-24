@@ -140,6 +140,9 @@ def inline_args(args):
 
     # Writes the instructions to the file
     with open(args[1], 'w') as f:
+        # Adds the header
+        f.write("v2.0 raw\n")
+
         for instruction in all_instructions:
             f.write(instruction + " ")
 
